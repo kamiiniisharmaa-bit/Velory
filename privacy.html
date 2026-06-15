@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Vélory · Privacy & Data Protection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: #fefcf9;
+      color: #1a2c2f;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header */
+    .site-header {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e2e8e6;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1e4a4b 0%, #2f7a6e 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-decoration: none;
+    }
+    .logo span {
+      color: #cf7b4c;
+      background: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c4b4c;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #cf7b4c;
+    }
+
+    /* privacy hero */
+    .privacy-hero {
+      background: linear-gradient(120deg, #f0f5ef 0%, #fefaf5 100%);
+      padding: 56px 0 48px;
+      border-bottom: 1px solid #e2eae4;
+    }
+    .privacy-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #1a2c2f;
+      margin-bottom: 16px;
+    }
+    .privacy-hero p {
+      font-size: 1.1rem;
+      color: #4a5b5c;
+      max-width: 760px;
+    }
+    .last-updated {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: #7f8e86;
+      border-left: 3px solid #cf7b4c;
+      padding-left: 16px;
+    }
+
+    /* main layout */
+    .privacy-content {
+      padding: 64px 0 80px;
+    }
+    .privacy-grid {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .sidebar {
+      flex: 1;
+      min-width: 220px;
+      position: sticky;
+      top: 100px;
+      align-self: start;
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 24px 20px;
+      border: 1px solid #e9efe9;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    }
+    .sidebar h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1e4a4b;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin-bottom: 14px;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #3f5e58;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      display: block;
+    }
+    .sidebar a:hover {
+      color: #cf7b4c;
+      transform: translateX(4px);
+    }
+    .main-privacy {
+      flex: 3;
+      background: white;
+      border-radius: 36px;
+      padding: 32px 40px;
+      border: 1px solid #edf2ea;
+      box-shadow: 0 12px 28px -12px rgba(0,0,0,0.05);
+    }
+    .privacy-section {
+      margin-bottom: 48px;
+      scroll-margin-top: 100px;
+    }
+    .privacy-section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1a2c2f;
+      letter-spacing: -0.3px;
+      border-left: 5px solid #cf7b4c;
+      padding-left: 18px;
+    }
+    .privacy-section h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: #2b554b;
+    }
+    .privacy-section p {
+      margin-bottom: 16px;
+      color: #2c423f;
+      font-weight: 400;
+    }
+    .privacy-section ul, .privacy-section ol {
+      margin: 16px 0 16px 28px;
+      color: #2c423f;
+    }
+    .privacy-section li {
+      margin-bottom: 8px;
+    }
+    .highlight-box {
+      background: #f8fbf6;
+      border-left: 4px solid #1e4a4b;
+      padding: 20px 24px;
+      border-radius: 20px;
+      margin: 24px 0;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+    .data-table th, .data-table td {
+      border: 1px solid #e2eae4;
+      padding: 12px 16px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #f4f8f2;
+      font-weight: 600;
+      color: #1e4a4b;
+    }
+    hr {
+      margin: 32px 0;
+      border: none;
+      height: 1px;
+      background: #e1e9e2;
+    }
+    @media (max-width: 860px) {
+      .container { padding: 0 20px; }
+      .sidebar { position: static; margin-bottom: 32px; }
+      .main-privacy { padding: 28px 24px; }
+      .privacy-hero h1 { font-size: 2rem; }
+    }
+    .footer {
+      border-top: 1px solid #e2eae4;
+      padding: 48px 0 32px;
+      background: #ffffff;
+      margin-top: 20px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col p {
+      color: #5a6e66;
+      max-width: 260px;
+      margin-top: 12px;
+    }
+    .footer-col h4 {
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .footer-col a {
+      display: block;
+      color: #3b5c54;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      color: #789086;
+      font-size: 0.8rem;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f0f3ee;
+      padding: 10px 20px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e4a4b;
+      margin-bottom: 24px;
+      transition: 0.2s;
+    }
+    .btn-back:hover {
+      background: #e2e9de;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="nav-row">
+      <a href="#" class="logo">VÉLORY<span>.</span></a>
+      <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+        <a href="#" class="cart-icon">🛒</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="privacy-hero">
+  <div class="container">
+    <a href="#" class="btn-back" id="backHomeBtn">← Back to Vélory Home</a>
+    <h1>Privacy Policy</h1>
+    <p>Your trust rides with us. Vélory is committed to protecting your personal data and being transparent about how we collect, use, and safeguard your information.</p>
+    <div class="last-updated">🔒 Last revised: June 12, 2026 · Version 3.0 (GDPR & CCPA compliant)</div>
+  </div>
+</section>
+
+<div class="container privacy-content">
+  <div class="privacy-grid">
+    <!-- Sidebar navigation -->
+    <aside class="sidebar">
+      <h3>Privacy topics</h3>
+      <ul>
+        <li><a href="#intro">1. Who we are</a></li>
+        <li><a href="#data-collect">2. Data we collect</a></li>
+        <li><a href="#usage">3. How we use data</a></li>
+        <li><a href="#sharing">4. Data sharing</a></li>
+        <li><a href="#cookies">5. Cookies & tracking</a></li>
+        <li><a href="#your-rights">6. Your privacy rights</a></li>
+        <li><a href="#security">7. Data security</a></li>
+        <li><a href="#children">8. Children's privacy</a></li>
+        <li><a href="#international">9. International transfers</a></li>
+        <li><a href="#contact">10. Contact us</a></li>
+      </ul>
+      <div style="margin-top: 28px; font-size: 0.75rem; color:#9aaba2;">⚡ Vélory Circuit members enjoy enhanced privacy controls in the dashboard.</div>
+    </aside>
+
+    <div class="main-privacy">
+      <div id="intro" class="privacy-section">
+        <h2>1. Who we are</h2>
+        <p>Vélory AB (“Vélory”, “we”, “us”, “our”) is a sustainable electric mobility brand headquartered in Stockholm, Sweden. This Privacy Policy explains how we collect, process, and protect your personal information when you visit our website <strong>velory.com</strong>, use our mobile app, purchase products, or interact with our customer support.</p>
+        <p>We act as the Data Controller for your personal data. For any privacy-related inquiries, please contact our Data Protection Officer at <strong>dpo@velory.com</strong> or mail us at Vélory AB, Södermalmstorg 4, 118 25 Stockholm, Sweden.</p>
+      </div>
+
+      <div id="data-collect" class="privacy-section">
+        <h2>2. What personal data we collect</h2>
+        <p>We collect information to provide better services to all our riders and customers. The categories of personal data we may collect include:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Category</th><th>Examples</th><th>Legal basis (GDPR)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Identity & contact</td><td>Full name, email address, phone number, shipping/billing address</td><td>Contract performance, legitimate interest</td></tr>
+            <tr><td>Account credentials</td><td>Username, password, Vélory Circuit ID, ride preferences</td><td>Contract performance</td></tr>
+            <tr><td>Transaction data</td><td>Purchase history, payment method (tokenized), order details, returns</td><td>Contract & legal obligation</td></tr>
+            <tr><td>Technical data</td><td>IP address, browser type, device identifiers, cookies, analytics</td><td>Legitimate interest (site security & improvements)</td></tr>
+            <tr><td>Ride & product telemetry*</td><td>Battery usage, odometer (only if you connect via Vélory App and consent)</td><td>Consent / product warranty</td></tr>
+          </tbody>
+        </table>
+        <p><em>*Telemetry data is only collected when you explicitly pair your Vélory e-bike with our app and grant permission. You can withdraw consent anytime in the app settings.</em></p>
+      </div>
+
+      <div id="usage" class="privacy-section">
+        <h2>3. How we use your information</h2>
+        <p>Vélory uses your personal data for the following purposes:</p>
+        <ul>
+          <li><strong>Order fulfillment:</strong> Process payments, ship products, provide order confirmations and updates.</li>
+          <li><strong>Customer support:</strong> Respond to inquiries, handle warranty claims, manage returns.</li>
+          <li><strong>Service improvement:</strong> Analyze website usage, optimize user experience, and develop new features.</li>
+          <li><strong>Marketing (with consent):</strong> Send you newsletters, exclusive offers, and Vélory Circuit updates. You can unsubscribe anytime.</li>
+          <li><strong>Legal compliance:</strong> Detect fraud, enforce our Terms of Service, and comply with applicable laws.</li>
+        </ul>
+        <div class="highlight-box">
+          🌱 <strong>Your choice matters:</strong> We never sell your personal data to third parties for their own marketing purposes. Any sharing is limited to essential service providers.
+        </div>
+      </div>
+
+      <div id="sharing" class="privacy-section">
+        <h2>4. Data sharing & third parties</h2>
+        <p>We may share your personal data with trusted third parties only when necessary:</p>
+        <ul>
+          <li><strong>Service providers:</strong> Payment processors (Stripe, PayPal), logistics partners (DHL, UPS), IT hosting, and email delivery services. These parties are bound by data protection agreements.</li>
+          <li><strong>Legal authorities:</strong> If required by law, court order, or to protect the rights and safety of Vélory, our customers, or others.</li>
+          <li><strong>Business transfers:</strong> In the event of a merger, acquisition, or asset sale, your data may be transferred (with notice).</li>
+        </ul>
+        <p>We do not share sensitive data for cross-context behavioral advertising without explicit opt-in consent.</p>
+      </div>
+
+      <div id="cookies" class="privacy-section">
+        <h2>5. Cookies & tracking technologies</h2>
+        <p>Vélory uses cookies and similar technologies to enhance your browsing experience, analyze traffic, and personalize content. You can manage cookie preferences via our cookie banner or browser settings.</p>
+        <h3>Types of cookies we use:</h3>
+        <ul>
+          <li><strong>Essential cookies:</strong> Required for site functionality (shopping cart, login).</li>
+          <li><strong>Analytics cookies:</strong> Help us understand how visitors interact with our site (e.g., Google Analytics anonymized).</li>
+          <li><strong>Preference cookies:</strong> Remember your language and region.</li>
+          <li><strong>Marketing cookies:</strong> Only placed after your consent to deliver relevant Vélory ads on third-party platforms.</li>
+        </ul>
+        <p>You can withdraw cookie consent at any time via the "Cookie Settings" link in our footer. Third-party cookies are governed by their respective privacy policies.</p>
+      </div>
+
+      <div id="your-rights" class="privacy-section">
+        <h2>6. Your privacy rights</h2>
+        <p>Depending on your location (EEA, UK, Switzerland, California, Brazil, etc.), you may have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Right to access:</strong> Request a copy of the data we hold about you.</li>
+          <li><strong>Right to rectification:</strong> Correct inaccurate or incomplete data.</li>
+          <li><strong>Right to erasure (“right to be forgotten”):</strong> Request deletion of your data, subject to legal obligations.</li>
+          <li><strong>Right to restrict processing:</strong> Limit how we use your data.</li>
+          <li><strong>Right to data portability:</strong> Receive your data in a structured, machine-readable format.</li>
+          <li><strong>Right to object:</strong> Object to processing based on legitimate interests or direct marketing.</li>
+          <li><strong>Right to withdraw consent:</strong> For any consent-based processing (e.g., marketing emails).</li>
+        </ul>
+        <p>To exercise these rights, please email <strong>privacy@velory.com</strong>. We will respond within 30 days. For California residents, see our CCPA addendum available upon request.</p>
+        <div class="highlight-box">
+          🛡️ <strong>No discrimination:</strong> Exercising your privacy rights will never affect pricing or service quality.
+        </div>
+      </div>
+
+      <div id="security" class="privacy-section">
+        <h2>7. Data security & retention</h2>
+        <p>Vélory implements industry-standard security measures including SSL encryption, firewalls, access controls, and regular security audits to protect your data from unauthorized access, alteration, or destruction. However, no internet transmission is 100% secure.</p>
+        <p>We retain your personal data only as long as necessary to fulfill the purposes outlined in this policy, comply with legal obligations (e.g., tax records for 7 years), resolve disputes, and enforce agreements. After that, data is anonymized or securely deleted.</p>
+      </div>
+
+      <div id="children" class="privacy-section">
+        <h2>8. Children's privacy</h2>
+        <p>Vélory does not knowingly collect personal data from children under the age of 16. Our products and services are directed toward adults and responsible riders over the legal age. If you believe a child has provided us with personal information, please contact us immediately, and we will take steps to delete such information.</p>
+      </div>
+
+      <div id="international" class="privacy-section">
+        <h2>9. International data transfers</h2>
+        <p>Vélory is headquartered in Sweden (EU) and may transfer your data to countries outside the European Economic Area (EEA) when using global service providers (e.g., cloud hosting, shipping carriers). In such cases, we ensure adequate safeguards, such as Standard Contractual Clauses (SCCs) or equivalent protections, are in place to guarantee your data remains secure.</p>
+        <p>For residents of the UK or Switzerland, similar transfer mechanisms apply. For any cross-border data transfer concerns, please reach out to our DPO.</p>
+      </div>
+
+      <div id="contact" class="privacy-section">
+        <h2>10. Contact us & complaints</h2>
+        <p>If you have any questions, concerns, or wish to submit a privacy request, please contact us:</p>
+        <ul>
+          <li><strong>Email:</strong> privacy@velory.com (preferred for data requests)</li>
+          <li><strong>DPO direct:</strong> dpo@velory.com</li>
+          <li><strong>Mail:</strong> Vélory AB, Attn: Data Protection, Södermalmstorg 4, 118 25 Stockholm, Sweden</li>
+        </ul>
+        <p>You also have the right to lodge a complaint with your local supervisory authority (e.g., Swedish Authority for Privacy Protection – IMY). We would appreciate the chance to resolve your concerns first.</p>
+        <hr>
+        <p style="font-size: 0.85rem;">⚡ Vélory reserves the right to update this Privacy Policy from time to time. Material changes will be notified via email or site banner. The “Last revised” date indicates when this policy was last updated.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#" class="logo" style="font-size:1.6rem;">VÉLORY<span>.</span></a>
+        <p>Conscious mobility • Designed in Stockholm, engineered for the world.</p>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      © 2026 Vélory — Unique electric mobility. Your privacy is our priority.
+    </div>
+  </div>
+</footer>
+
+<!-- Smooth scroll for sidebar & back button -->
+<script>
+  // smooth anchor scroll for sidebar links
+  document.querySelectorAll('.sidebar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if(targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        history.pushState(null, null, `#${targetId}`);
+      }
+    });
+  });
+
+  // if URL contains hash, scroll to section after load
+  if(window.location.hash) {
+    const hashId = window.location.hash.substring(1);
+    const el = document.getElementById(hashId);
+    if(el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
+  }
+
+  // Back button placeholder (demo behaviour)
+  const backBtn = document.getElementById('backHomeBtn');
+  if(backBtn) {
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('🔙 Navigate to Vélory Homepage (demo — would return to main shop)');
+      // In a real implementation: window.location.href = '/';
+    });
+  }
+</script>
+</body>
+</html>

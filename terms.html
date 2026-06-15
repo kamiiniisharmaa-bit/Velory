@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Vélory · Terms of Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: #fefcf9;
+      color: #1a2c2f;
+      line-height: 1.5;
+    }
+
+    /* container & utility */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header / nav (consistent with homepage) */
+    .site-header {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e2e8e6;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1e4a4b 0%, #2f7a6e 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-decoration: none;
+    }
+    .logo span {
+      color: #cf7b4c;
+      background: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c4b4c;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #cf7b4c;
+    }
+
+    /* terms hero */
+    .terms-hero {
+      background: linear-gradient(120deg, #f1f6f2 0%, #fefaf5 100%);
+      padding: 56px 0 48px;
+      border-bottom: 1px solid #e2eae4;
+    }
+    .terms-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #1a2c2f;
+      margin-bottom: 16px;
+    }
+    .terms-hero p {
+      font-size: 1.1rem;
+      color: #4a5b5c;
+      max-width: 760px;
+    }
+    .last-updated {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: #7f8e86;
+      border-left: 3px solid #cf7b4c;
+      padding-left: 16px;
+    }
+
+    /* main content */
+    .terms-content {
+      padding: 64px 0 80px;
+    }
+    .terms-grid {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .sidebar {
+      flex: 1;
+      min-width: 220px;
+      position: sticky;
+      top: 100px;
+      align-self: start;
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 24px 20px;
+      border: 1px solid #e9efe9;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    }
+    .sidebar h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1e4a4b;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin-bottom: 14px;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #3f5e58;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      display: block;
+    }
+    .sidebar a:hover {
+      color: #cf7b4c;
+      transform: translateX(4px);
+    }
+    .main-terms {
+      flex: 3;
+      background: white;
+      border-radius: 36px;
+      padding: 32px 40px;
+      border: 1px solid #edf2ea;
+      box-shadow: 0 12px 28px -12px rgba(0,0,0,0.05);
+    }
+    .terms-section {
+      margin-bottom: 48px;
+      scroll-margin-top: 100px;
+    }
+    .terms-section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1a2c2f;
+      letter-spacing: -0.3px;
+      border-left: 5px solid #cf7b4c;
+      padding-left: 18px;
+    }
+    .terms-section h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: #2b554b;
+    }
+    .terms-section p {
+      margin-bottom: 16px;
+      color: #2c423f;
+      font-weight: 400;
+    }
+    .terms-section ul, .terms-section ol {
+      margin: 16px 0 16px 28px;
+      color: #2c423f;
+    }
+    .terms-section li {
+      margin-bottom: 8px;
+    }
+    .highlight-box {
+      background: #f8fbf6;
+      border-left: 4px solid #1e4a4b;
+      padding: 20px 24px;
+      border-radius: 20px;
+      margin: 24px 0;
+    }
+    hr {
+      margin: 32px 0;
+      border: none;
+      height: 1px;
+      background: #e1e9e2;
+    }
+    @media (max-width: 860px) {
+      .container { padding: 0 20px; }
+      .sidebar { position: static; margin-bottom: 32px; }
+      .main-terms { padding: 28px 24px; }
+      .terms-hero h1 { font-size: 2rem; }
+    }
+    .footer {
+      border-top: 1px solid #e2eae4;
+      padding: 48px 0 32px;
+      background: #ffffff;
+      margin-top: 20px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col p {
+      color: #5a6e66;
+      max-width: 260px;
+      margin-top: 12px;
+    }
+    .footer-col h4 {
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .footer-col a {
+      display: block;
+      color: #3b5c54;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      color: #789086;
+      font-size: 0.8rem;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f0f3ee;
+      padding: 10px 20px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e4a4b;
+      margin-bottom: 24px;
+      transition: 0.2s;
+    }
+    .btn-back:hover {
+      background: #e2e9de;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="nav-row">
+      <a href="#" class="logo">VÉLORY<span>.</span></a>
+      <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+        <a href="#" class="cart-icon">🛒</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="terms-hero">
+  <div class="container">
+    <a href="#" class="btn-back">← Back to Vélory Home</a>
+    <h1>Terms of Service</h1>
+    <p>Welcome to Vélory. These terms govern your use of our website, products, and services — because transparency builds trust, just like sustainable mobility.</p>
+    <div class="last-updated">📅 Last updated: June 12, 2026 · Version 2.4 (Electric Series Edition)</div>
+  </div>
+</section>
+
+<div class="container terms-content">
+  <div class="terms-grid">
+    <!-- Sticky sidebar navigation -->
+    <aside class="sidebar">
+      <h3>On this page</h3>
+      <ul>
+        <li><a href="#agreement">1. Agreement to Terms</a></li>
+        <li><a href="#account">2. Account & Registration</a></li>
+        <li><a href="#purchases">3. Purchases & Pricing</a></li>
+        <li><a href="#shipping">4. Shipping & Delivery</a></li>
+        <li><a href="#returns">5. Returns & Warranty</a></li>
+        <li><a href="#intellectual">6. Intellectual Property</a></li>
+        <li><a href="#limitations">7. Limitation of Liability</a></li>
+        <li><a href="#governing">8. Governing Law</a></li>
+      </ul>
+      <div style="margin-top: 28px; font-size: 0.75rem; color:#9aaba2;">⚡ Vélory Circuit Member? <br>Special terms apply to test rides.</div>
+    </aside>
+
+    <div class="main-terms">
+      <!-- Agreement section -->
+      <div id="agreement" class="terms-section">
+        <h2>1. Agreement to Terms</h2>
+        <p>By accessing or using the website <strong>velory.com</strong> (including all subdomains), mobile applications, or any Vélory products or services, you agree to be bound by these Terms of Service (“Terms”). If you do not agree to these Terms, you may not use our services. These Terms constitute a legally binding agreement between you (“User”, “Customer” or “Rider”) and Vélory AB (“Vélory”, “we”, “us”, “our”).</p>
+        <p>Vélory reserves the right to modify or replace these Terms at any time. Material changes will be notified via email or a prominent notice on our site. Your continued use after any changes constitutes acceptance of the new Terms.</p>
+        <div class="highlight-box">
+          🌿 <strong>Our commitment:</strong> Vélory creates electric mobility with a low‑carbon footprint, but safe riding and compliance with local traffic laws are your responsibility.
+        </div>
+      </div>
+
+      <div id="account" class="terms-section">
+        <h2>2. Account & Registration</h2>
+        <p>To access certain features (such as warranty registration or Vélory Circuit loyalty), you may be required to create an account. You agree to provide accurate, current, and complete information during registration and to update it promptly. You are solely responsible for safeguarding your password and for all activities under your account. Notify us immediately of any unauthorized use. Vélory reserves the right to suspend or terminate accounts that violate these Terms or applicable laws.</p>
+        <ul>
+          <li><strong>Age requirement:</strong> You must be at least 18 years old or have parental consent to create an account.</li>
+          <li><strong>Accuracy:</strong> False or misleading information may result in order cancellation or account ban.</li>
+        </ul>
+      </div>
+
+      <div id="purchases" class="terms-section">
+        <h2>3. Purchases & Pricing</h2>
+        <p>All orders placed through Vélory are subject to product availability and our acceptance. Prices are displayed in USD (or local currency where applicable) and exclude taxes, shipping fees, and import duties unless stated otherwise. Vélory reserves the right to adjust prices, discontinue products, or modify promotional offers at any time without prior notice.</p>
+        <p>Once you place an order, we will send an order confirmation email. This email does not guarantee acceptance — we may cancel orders due to stock issues, pricing errors, or suspected fraud. In such cases, you’ll receive a full refund.</p>
+        <h3>Payment Methods</h3>
+        <p>We accept major credit cards, PayPal, and Vélory gift cards. By providing payment details, you represent that you are authorized to use the chosen payment method. All transactions are secured with industry-standard encryption.</p>
+      </div>
+
+      <div id="shipping" class="terms-section">
+        <h2>4. Shipping & Delivery</h2>
+        <p>Vélory ships worldwide to most countries. Estimated delivery times are provided at checkout, but actual delivery may vary due to customs or carrier delays. Risk of loss and title for products pass to you upon delivery to the carrier. For electric bikes, signature upon delivery is required.</p>
+        <ul>
+          <li><strong>Shipping costs:</strong> Calculated based on weight, destination, and selected shipping method.</li>
+          <li><strong>Pre‑orders:</strong> Estimated shipping dates are approximate; Vélory is not liable for delays caused by supply chain disruptions.</li>
+        </ul>
+        <p>If a package is lost or damaged in transit, please contact us within 7 days. We will assist with a carrier claim or replacement according to our policy.</p>
+      </div>
+
+      <div id="returns" class="terms-section">
+        <h2>5. Returns & Warranty</h2>
+        <p>We want you to love your Vélory gear. Most unused products in original packaging can be returned within <strong>30 days</strong> of delivery for a refund (shipping costs non‑refundable). Electric bikes and batteries have a separate <strong>14-day trial period</strong> — test rides matter. Final sale items (including opened batteries, custom engraved products) are not eligible for return.</p>
+        <div class="highlight-box">
+          🔧 <strong>Limited Warranty:</strong> Vélory offers a 2-year warranty on frames and motors, and 1-year on electrical components from the original purchase date. Warranty does not cover normal wear, accidents, modifications, or improper use. To make a claim, contact our support team with proof of purchase.
+        </div>
+        <p>All returns must be authorized via our Returns Portal. Refunds will be issued within 14 days after inspection.</p>
+      </div>
+
+      <div id="intellectual" class="terms-section">
+        <h2>6. Intellectual Property</h2>
+        <p>All content on the Vélory website — including logos, product designs, photography, videos, text, graphics, and the “Vélory” brand name — is the exclusive property of Vélory AB or its licensors and is protected by international copyright, trademark, and trade secret laws. You may not reproduce, distribute, modify, or create derivative works without explicit written permission.</p>
+        <p>Vélory respects the intellectual property of others. If you believe your work has been infringed, please email legal@velory.com with a detailed notice.</p>
+      </div>
+
+      <div id="limitations" class="terms-section">
+        <h2>7. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, Vélory and its officers, employees, or affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of products or services, including loss of profits, data, or personal injury related to riding e‑bikes. Our total liability for any claim shall not exceed the amount you paid for the specific product giving rise to the claim.</p>
+        <p>Some jurisdictions do not allow the exclusion of certain warranties or limitations of liability, so the above limitations may not apply to you. Vélory does not exclude liability for death or personal injury caused by our negligence.</p>
+      </div>
+
+      <div id="governing" class="terms-section">
+        <h2>8. Governing Law & Dispute Resolution</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of Sweden, without regard to conflict of law principles. Any dispute arising from these Terms or your use of Vélory services shall be resolved through binding arbitration in Stockholm, unless you opt out within 30 days of accepting these Terms by emailing arbitration@velory.com. Small claims court actions are also permitted.</p>
+        <p>For EU customers, you may also use the European Commission’s Online Dispute Resolution platform. Nothing in this section prevents either party from seeking injunctive relief.</p>
+        <hr>
+        <p style="font-size: 0.85rem;">📬 <strong>Contact us:</strong> For questions regarding these Terms, please reach out to <strong>terms@velory.com</strong> or write to: Vélory AB, Södermalmstorg 4, 118 25 Stockholm, Sweden.</p>
+      </div>
+
+      <div class="highlight-box" style="margin-top: 10px;">
+        ⚡ By riding electric, you agree to follow local traffic regulations and ride responsibly. Vélory is not liable for injuries or fines resulting from misuse of our vehicles.
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#" class="logo" style="font-size:1.6rem;">VÉLORY<span>.</span></a>
+        <p>Conscious mobility • Designed in Stockholm, engineered for the world.</p>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      © 2026 Vélory — Unique electric mobility. All rights reserved. These Terms of Service form a binding agreement.
+    </div>
+  </div>
+</footer>
+
+<!-- Smooth scroll for sidebar links + highlight active -->
+<script>
+  document.querySelectorAll('.sidebar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if(targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        // update URL hash without jumping
+        history.pushState(null, null, `#${targetId}`);
+      }
+    });
+  });
+
+  // optional: if page loads with hash, scroll to that section
+  if(window.location.hash) {
+    const hashId = window.location.hash.substring(1);
+    const el = document.getElementById(hashId);
+    if(el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }
+
+  // back button link placeholder – make "Back to Home" point to main site
+  const backBtn = document.querySelector('.btn-back');
+  if(backBtn) {
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = '#';  // in real world, would point to index. For demo keeps same domain.
+      alert('Navigate to Vélory Homepage (demo: would return to main shop)');
+    });
+  }
+</script>
+</body>
+</html>

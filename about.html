@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Vélory · Our Story | Sustainable Electric Mobility</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: #fefcf9;
+      color: #1a2c2f;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header / nav */
+    .site-header {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e2e8e6;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1e4a4b 0%, #2f7a6e 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-decoration: none;
+    }
+    .logo span {
+      color: #cf7b4c;
+      background: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c4b4c;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #cf7b4c;
+    }
+
+    /* about hero */
+    .about-hero {
+      background: linear-gradient(135deg, #eef3ea 0%, #fef7ef 100%);
+      padding: 64px 0 56px;
+      border-bottom: 1px solid #e2eae4;
+    }
+    .about-hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #1a2c2f;
+      margin-bottom: 20px;
+      max-width: 800px;
+    }
+    .about-hero .lead {
+      font-size: 1.25rem;
+      color: #45635c;
+      max-width: 720px;
+      line-height: 1.4;
+    }
+
+    /* mission banner */
+    .mission-banner {
+      background: #1e2f2c;
+      color: white;
+      border-radius: 48px;
+      margin: -40px auto 48px;
+      padding: 48px 56px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 20px 32px -20px rgba(0,0,0,0.2);
+    }
+    .mission-banner h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .mission-banner p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* story grid */
+    .story-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      margin: 56px 0 64px;
+      align-items: center;
+    }
+    .story-text {
+      flex: 1.2;
+    }
+    .story-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1a2c2f;
+    }
+    .story-text p {
+      margin-bottom: 20px;
+      color: #3a5750;
+    }
+    .story-image {
+      flex: 1;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 20px 32px -18px rgba(0,0,0,0.15);
+    }
+    .story-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .story-image:hover img {
+      transform: scale(1.02);
+    }
+
+    /* values section */
+    .values-section {
+      background: #f6faf5;
+      border-radius: 48px;
+      padding: 64px 48px;
+      margin: 48px 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      color: #1a2c2f;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+    .value-card {
+      background: white;
+      padding: 32px 24px;
+      border-radius: 32px;
+      text-align: center;
+      transition: 0.25s ease;
+      border: 1px solid #e3ece1;
+    }
+    .value-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 28px -14px rgba(0,0,0,0.08);
+      border-color: #cfdec9;
+    }
+    .value-icon {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    .value-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .value-card p {
+      color: #4f6b63;
+    }
+
+    /* team section */
+    .team-section {
+      margin: 64px 0;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      margin-top: 32px;
+    }
+    .team-member {
+      text-align: center;
+    }
+    .team-member img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #e2ece0;
+      transition: 0.2s;
+    }
+    .team-member h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .team-member p {
+      color: #7f8e86;
+      margin-top: 6px;
+    }
+
+    /* sustainability impact */
+    .impact-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 28px;
+      background: #ffffff;
+      border-radius: 40px;
+      padding: 48px 36px;
+      margin: 48px 0;
+      border: 1px solid #e2eae4;
+      text-align: center;
+    }
+    .stat {
+      flex: 1;
+    }
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #1e4a4b;
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-weight: 500;
+      color: #5a736b;
+    }
+
+    /* cta section */
+    .cta-section {
+      background: linear-gradient(105deg, #1e4a4b 0%, #2f6b5e 100%);
+      border-radius: 48px;
+      padding: 64px 48px;
+      text-align: center;
+      color: white;
+      margin-bottom: 64px;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      max-width: 560px;
+      margin: 0 auto 28px;
+      opacity: 0.9;
+    }
+    .btn-primary {
+      background: #cf7b4c;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 48px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+    }
+    .btn-primary:hover {
+      background: #b86234;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      border-top: 1px solid #e2eae4;
+      padding: 48px 0 32px;
+      background: #ffffff;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col p {
+      color: #5a6e66;
+      max-width: 260px;
+      margin-top: 12px;
+    }
+    .footer-col h4 {
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .footer-col a {
+      display: block;
+      color: #3b5c54;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      color: #789086;
+      font-size: 0.8rem;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f0f3ee;
+      padding: 10px 20px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e4a4b;
+      margin-bottom: 24px;
+      transition: 0.2s;
+    }
+    .btn-back:hover {
+      background: #e2e9de;
+    }
+
+    @media (max-width: 860px) {
+      .container { padding: 0 20px; }
+      .mission-banner { padding: 36px 28px; margin-top: -20px; }
+      .values-section { padding: 40px 24px; }
+      .about-hero h1 { font-size: 2.4rem; }
+      .story-grid { flex-direction: column; }
+      .impact-stats { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="nav-row">
+      <a href="#" class="logo">VÉLORY<span>.</span></a>
+      <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+        <a href="#" class="cart-icon">🛒</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="about-hero">
+  <div class="container">
+    <a href="#" class="btn-back" id="backHomeBtn">← Back to Vélory Home</a>
+    <h1>We believe in freedom that doesn’t cost the earth.</h1>
+    <p class="lead">Vélory was born from a simple obsession: create the most beautiful, sustainable, and joyful electric rides — without compromise.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="mission-banner">
+    <h2>⚡ Our mission: Electrify every journey, responsibly.</h2>
+    <p>By 2030, we aim to offset 100% of our production carbon footprint and make micro-mobility accessible to all. Every Vélory bike plants 5 trees through reforestation partners.</p>
+  </div>
+
+  <!-- story + image -->
+  <div class="story-grid">
+    <div class="story-text">
+      <h2>From a Stockholm garage to global movement</h2>
+      <p>In 2020, our founders Elin & Mateo — two engineers obsessed with cycling and climate action — realized that most e-bikes were either boring or built unsustainably. They quit their jobs and started tinkering in a tiny workshop in Södermalm. The first Vélory prototype was welded from recycled aluminum and powered by a hand‑wound motor. Word spread fast. </p>
+      <p>Today, Vélory has grown into a collective of designers, riders, and activists. We partner with European suppliers, use vegan/eco materials, and every bike is assembled in our low‑impact facility in Västerås. We're not just building e-bikes — we're building a community that values clean air, quiet streets, and timeless design.</p>
+    </div>
+    <div class="story-image">
+      <img src="https://picsum.photos/id/20/700/500" alt="Vélory workshop and team in Stockholm" loading="lazy">
+    </div>
+  </div>
+
+  <!-- values section -->
+  <div class="values-section">
+    <div class="section-title">What drives us</div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🌱</div>
+        <h3>Circular by design</h3>
+        <p>Modular frames, repairable batteries, and take‑back program. We minimize waste from day one.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Performance with soul</h3>
+        <p>Our proprietary motor tuning delivers smooth, silent power — no unnecessary torque, just pure joy.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Community first</h3>
+        <p>Local test rides, group adventures, and open-source repair guides. We ride together.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🛡️</div>
+        <h3>Radical transparency</h3>
+        <p>Every material, every cost, and every carbon metric is published. See how we build.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- team section with unique images -->
+  <div class="team-section">
+    <div class="section-title">The faces behind Vélory</div>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Elin Nordström">
+        <h4>Elin Nordström</h4>
+        <p>Co-founder & Design Lead</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mateo Reyes">
+        <h4>Mateo Reyes</h4>
+        <p>Co-founder & Engineering</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Kapoor">
+        <h4>Priya Kapoor</h4>
+        <p>Head of Sustainability</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="Lukas Wagner">
+        <h4>Lukas Wagner</h4>
+        <p>Ride Experience Lead</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- impact stats -->
+  <div class="impact-stats">
+    <div class="stat">
+      <div class="stat-number">12k+</div>
+      <div class="stat-label">Vélory riders worldwide</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">2,480 tons</div>
+      <div class="stat-label">CO₂ saved (vs car trips)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Renewable factory energy</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">98%</div>
+      <div class="stat-label">5-star ride reviews</div>
+    </div>
+  </div>
+
+  <!-- cta -->
+  <div class="cta-section">
+    <h2>Join the ride — become part of the circuit</h2>
+    <p>Whether you're a daily commuter or weekend explorer, there's a Vélory made for you. Experience electric freedom firsthand.</p>
+    <a href="#" class="btn-primary">Book a test ride →</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#" class="logo" style="font-size:1.6rem;">VÉLORY<span>.</span></a>
+        <p>Conscious mobility • Designed in Stockholm, engineered for the world.</p>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      © 2026 Vélory — Unique electric mobility. Ride with purpose.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // back button demo behavior
+  const backBtn = document.getElementById('backHomeBtn');
+  if(backBtn) {
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('✨ Return to Vélory Homepage (demo — main shop experience)');
+      // In production: window.location.href = '/';
+    });
+  }
+
+  // smooth team image hover effect is CSS, and add any interactive demo for cta
+  const ctaBtn = document.querySelector('.cta-section .btn-primary');
+  if(ctaBtn) {
+    ctaBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('🚴‍♀️ Test ride booking demo — Vélory dealers near you will be shown.');
+    });
+  }
+
+  // replace story image with better unique cycling/nature related image (avoid coffee machine)
+  const storyImg = document.querySelector('.story-image img');
+  if(storyImg) {
+    storyImg.src = "https://picsum.photos/id/58/700/500";
+    storyImg.alt = "Vélory e-bike assembly and green workshop";
+  }
+  // also ensure all external images are friendly, randomuser.me works for team photos
+</script>
+</body>
+</html>
